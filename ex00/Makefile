@@ -1,4 +1,4 @@
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRC = *.cpp
 
 All:
 	@c++ -o Animal -Wall -Wextra -Werror $(SRC)

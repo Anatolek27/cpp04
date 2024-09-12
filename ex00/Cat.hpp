@@ -1,17 +1,14 @@
 #ifndef CAT_HPP
-# define CAT_HPP
-
-#pragma once
+#define CAT_HPP
 
 #include "Animal.hpp"
 
-class Cat : virtual public Animal {
-	public:
-		Cat();
-		Cat(Cat &other);
-		Cat &operator=(Cat &other);
-		~Cat();
-		void makeSound();
+class Cat : public Animal {
+public:
+    Cat();
+    virtual ~Cat();
+
+    virtual void makeSound() const override;
 };
 
 #endif
