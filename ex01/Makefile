@@ -1,22 +1,9 @@
-NAME	= animal
-SRC		= $(wildcard *.cpp)
-OBJ		= $(SRC:.cpp=.o)
-CXX		= c++
-CFL		= -Wall -Wextra -Werror
-RM		= rm -rf
-
-all: $(NAME)
-
-$(NAME): $(OBJ)
-	$(CXX) $(CFL) $(OBJ) -o $(NAME)
-
-%.o: %.cpp
-	$(CXX) $(CFL) -c $< -o $@
+All:
+	c++ -Wall -Wextra -Werror -std=c++98 -o Bureaucrat *.cpp
 
 clean:
-	$(RM) $(OBJ)
+	rm Bureaucrat
 
-fclean: clean
-	$(RM) $(NAME)
-
-re: fclean all
+re:
+	rm Bureaucrat
+	All

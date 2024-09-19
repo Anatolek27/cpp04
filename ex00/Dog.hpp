@@ -4,11 +4,13 @@
 #include "Animal.hpp"
 
 class Dog : public Animal {
-public:
-    Dog();
-    virtual ~Dog();
+    public:
+        Dog();
+        Dog(const Dog &other);
+        Dog &operator=(const Dog &other);
+        ~Dog();
 
-    virtual void makeSound() const override;
+        void makeSound() const;
 };
 
 #endif

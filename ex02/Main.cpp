@@ -4,6 +4,8 @@
 
 int main() {
     const int numberOfAnimals = 50;
+    /*Animal *animal = new Animal();
+    delete animal;*/
     Animal* animals[numberOfAnimals];
 
     for (int i = 0; i < numberOfAnimals / 2; ++i) {
