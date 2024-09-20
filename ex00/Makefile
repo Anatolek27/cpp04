@@ -1,9 +1,32 @@
-All:
-	c++ -Wall -Wextra -Werror -std=c++98 -o Bureaucrat *.cpp
+NAME	= Animal
+
+CC		=	c++
+FLAGS	=	-Wall -Wextra -Werror -std=c++98
+RM		=	rm -rf
+SRC		=	*.cpp
+
+#Colors:
+GREEN		=	\e[92;5;118m
+YELLOW		=	\e[93;5;226m
+GRAY		=	\e[33;2;37m
+RESET		=	\e[0m
+CURSIVE		=	\e[33;3m
+
+.PHONY: all clean re
+
+all: $(NAME)
+
+$(NAME):
+	@printf "$(CURSIVE)$(GRAY) - Compiling $(NAME)... $(RESET)\n"
+	@$(CC) $(SRC) -o $(NAME)
+	@printf "$(GREEN)    - Executable ready.\n$(RESET)"
 
 clean:
-	rm Bureaucrat
+	@$(RM) $(NAME)
+	@printf "$(YELLOW)    - Executable removed.$(RESET)\n"
 
-re:
-	rm Bureaucrat
-	All
+fclean:
+	@$(RM) $(NAME)
+	@printf "$(YELLOW)    - Executable removed.$(RESET)\n"
+
+re: clean all
